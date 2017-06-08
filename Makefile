@@ -11,7 +11,6 @@ englishcv: WeizhouPan_en.pdf WeizhouPan_en.html
 
 %.html: %.pdf
 	pdf2htmlEX --zoom=1.5 $<
-	mv *.html docs/
 
 clean:
 	-rm -f *.aux *.log *.out
