@@ -37,7 +37,7 @@ scripts = '''
 	 user: "wzpan",
 	 repo: "wzpan.github.io",
 	 no_comment: "暂无评价呢",
-	 go_to_comment: "去给我评价",
+	 go_to_comment: "去评价我",
 	 issue_id: "11",
 	 btn_class: "btn",
 	 comments_target: "#comment-thread",

@@ -11,6 +11,7 @@ encv: WeizhouPan_en.pdf
 %.pdf: %.tex WeizhouPan.sty
 	xelatex -interaction=batchmode $<
 	xelatex -interaction=batchmode $<
+	xelatex -interaction=batchmode $<
 
 %.html: %.pdf
 	pdf2htmlEX --zoom=1.5 $<
