@@ -1,9 +1,12 @@
-FTP_DIR=cv
+all: cnsite ensite cncv encv
 
-all: chinesecv englishcv
+cnsite: site_cn.pdf site_cn.html
+	-rm site_cn.pdf
+ensite: site_en.pdf site_en.html
+	-rm site_en.pdf
 
-chinesecv: WeizhouPan_cn.pdf WeizhouPan_cn.html
-englishcv: WeizhouPan_en.pdf WeizhouPan_en.html
+cncv: WeizhouPan_cn.pdf
+encv: WeizhouPan_en.pdf
 
 %.pdf: %.tex WeizhouPan.sty
 	xelatex -interaction=batchmode $<
@@ -11,8 +14,10 @@ englishcv: WeizhouPan_en.pdf WeizhouPan_en.html
 
 %.html: %.pdf
 	pdf2htmlEX --zoom=1.5 $<
+	python process.py $@
+	mv $@ docs/	
 
 clean:
-	-rm -f *.aux *.log *.out
-	-rm -r auto
+	-rm -f *.aux *.log *.out *.html
+	-rm -r auto	
 
